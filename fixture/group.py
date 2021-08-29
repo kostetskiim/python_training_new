@@ -57,3 +57,10 @@ class GroupHelper:
         wd.find_element_by_name("group_footer").send_keys(group.footer)
         wd.find_element_by_name("update").click()
         self.return_to_home_page()
+
+
+    def count_group(self):
+        wd = self.app.wd
+        self.open_group_page()
+        # init group creation
+        return len(wd.find_elements_by_name("selected[]"))

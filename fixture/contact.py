@@ -55,3 +55,10 @@ class ContactHelper:
         wd.find_element_by_name("lastname").send_keys(contact.lastname)
         wd.find_element_by_name("update").click()
         self.return_to_home_page_contact()
+
+
+    def count_contact(self):
+        wd = self.app.wd
+        self.open_contact_page()
+        # init group creation
+        return len(wd.find_elements_by_name("selected[]"))
